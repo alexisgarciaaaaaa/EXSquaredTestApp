@@ -23,6 +23,11 @@
 		14FBA52D2D53E2B100189406 /* UseCatListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FBA52C2D53E2B100189406 /* UseCatListService.swift */; };
 		14FBA5302D53E35400189406 /* CatRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FBA52F2D53E35400189406 /* CatRequest.swift */; };
 		14FBA5322D53E4DF00189406 /* CatListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FBA5312D53E4DF00189406 /* CatListViewModel.swift */; };
+		14FBA5342D53FAA000189406 /* CatDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FBA5332D53FAA000189406 /* CatDetailViewModel.swift */; };
+		14FBA5362D540BD900189406 /* CatDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FBA5352D540BD900189406 /* CatDetailModel.swift */; };
+		14FBA5392D540C3C00189406 /* CatInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FBA5382D540C3C00189406 /* CatInfoView.swift */; };
+		14FBA53B2D540C5900189406 /* StatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FBA53A2D540C5900189406 /* StatView.swift */; };
+		14FBA53F2D540D0100189406 /* NoImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FBA53E2D540D0100189406 /* NoImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +48,11 @@
 		14FBA52C2D53E2B100189406 /* UseCatListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCatListService.swift; sourceTree = "<group>"; };
 		14FBA52F2D53E35400189406 /* CatRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatRequest.swift; sourceTree = "<group>"; };
 		14FBA5312D53E4DF00189406 /* CatListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatListViewModel.swift; sourceTree = "<group>"; };
+		14FBA5332D53FAA000189406 /* CatDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatDetailViewModel.swift; sourceTree = "<group>"; };
+		14FBA5352D540BD900189406 /* CatDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatDetailModel.swift; sourceTree = "<group>"; };
+		14FBA5382D540C3C00189406 /* CatInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatInfoView.swift; sourceTree = "<group>"; };
+		14FBA53A2D540C5900189406 /* StatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatView.swift; sourceTree = "<group>"; };
+		14FBA53E2D540D0100189406 /* NoImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +85,7 @@
 		14FBA4FC2D53D6CE00189406 /* EXSquaredTestApp */ = {
 			isa = PBXGroup;
 			children = (
+				14FBA53D2D540CF200189406 /* Components */,
 				14FBA50B2D53D8C800189406 /* App */,
 				14FBA50C2D53D8DE00189406 /* Feature */,
 				14FBA50D2D53D8F000189406 /* Networking */,
@@ -142,6 +153,9 @@
 			isa = PBXGroup;
 			children = (
 				14FBA5122D53DC5000189406 /* DetailView.swift */,
+				14FBA5332D53FAA000189406 /* CatDetailViewModel.swift */,
+				14FBA5352D540BD900189406 /* CatDetailModel.swift */,
+				14FBA5372D540C2B00189406 /* Components */,
 			);
 			path = DetailPage;
 			sourceTree = "<group>";
@@ -150,9 +164,9 @@
 			isa = PBXGroup;
 			children = (
 				14FBA5152D53DC8500189406 /* CatListView.swift */,
-				14FBA5172D53DC9000189406 /* ListItemView.swift */,
 				14FBA5192D53DCA000189406 /* ListItemModel.swift */,
 				14FBA5312D53E4DF00189406 /* CatListViewModel.swift */,
+				14FBA53C2D540C9600189406 /* Components */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -197,6 +211,31 @@
 				14FBA52F2D53E35400189406 /* CatRequest.swift */,
 			);
 			path = RequestModel;
+			sourceTree = "<group>";
+		};
+		14FBA5372D540C2B00189406 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				14FBA5382D540C3C00189406 /* CatInfoView.swift */,
+				14FBA53A2D540C5900189406 /* StatView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		14FBA53C2D540C9600189406 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				14FBA5172D53DC9000189406 /* ListItemView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		14FBA53D2D540CF200189406 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				14FBA53E2D540D0100189406 /* NoImageView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,16 +312,21 @@
 				14FBA5242D53DF7F00189406 /* CatAPI.swift in Sources */,
 				14FBA5322D53E4DF00189406 /* CatListViewModel.swift in Sources */,
 				14FBA51D2D53DF0600189406 /* APIClient.swift in Sources */,
+				14FBA5392D540C3C00189406 /* CatInfoView.swift in Sources */,
 				14FBA5162D53DC8500189406 /* CatListView.swift in Sources */,
 				14FBA52D2D53E2B100189406 /* UseCatListService.swift in Sources */,
 				14FBA5002D53D6CE00189406 /* ContentView.swift in Sources */,
 				14FBA52A2D53E1C400189406 /* UseCatListRepository.swift in Sources */,
 				14FBA5132D53DC5000189406 /* DetailView.swift in Sources */,
+				14FBA5342D53FAA000189406 /* CatDetailViewModel.swift in Sources */,
 				14FBA5212D53DF3D00189406 /* HTTPMethod.swift in Sources */,
+				14FBA53B2D540C5900189406 /* StatView.swift in Sources */,
+				14FBA5362D540BD900189406 /* CatDetailModel.swift in Sources */,
 				14FBA51A2D53DCA000189406 /* ListItemModel.swift in Sources */,
 				14FBA4FE2D53D6CE00189406 /* EXSquaredTestAppApp.swift in Sources */,
 				14FBA5302D53E35400189406 /* CatRequest.swift in Sources */,
 				14FBA51F2D53DF2500189406 /* APIEndpoint.swift in Sources */,
+				14FBA53F2D540D0100189406 /* NoImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

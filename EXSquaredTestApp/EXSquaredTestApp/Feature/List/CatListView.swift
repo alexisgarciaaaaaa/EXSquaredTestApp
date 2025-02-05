@@ -15,34 +15,43 @@ struct CatListView: View {
     }
     
     var body: some View {
-        List {
-            if viewModel.isLoading {
-                ProgressView("Loading...")
-            } else if let errorMessage = viewModel.errorMessage {
-                Text(errorMessage).foregroundColor(.red)
-            } else {
-                ForEach(viewModel.cats) { cat in
-                    ListItemView(cat: cat)
+        NavigationView {
+            List {
+                if viewModel.isLoading {
+                    ProgressView("Loading...")
+                } else if let errorMessage = viewModel.errorMessage {
+                    Text(errorMessage).foregroundColor(.red)
+                } else {
+                    ForEach(viewModel.cats) { cat in
+                        ZStack {
+                            ListItemView(cat: cat)
+                            NavigationLink(destination: DetailView(catId: cat.id)) {
+                                EmptyView()
+                            }
+                            .buttonStyle(PlainButtonStyle())
+                            .opacity(0)
+                        }
                         .onAppear {
                             if cat == viewModel.cats.last {
                                 viewModel.fetchMoreCats()
                             }
                         }
-                }
-                
-                if viewModel.isFetchingMore {
-                    ProgressView()
-                        .padding()
+                    }
+                    
+                    if viewModel.isFetchingMore {
+                        ProgressView()
+                            .padding()
+                    }
                 }
             }
+            .onAppear(perform: viewModel.firstLoad)
+            .listStyle(PlainListStyle())
+            .background(Color.clear)
+            .navigationTitle("Cat Breeds")
         }
-        .onAppear {
-            viewModel.fetchCats()
-        }
-        .listStyle(PlainListStyle()) // Cambia el estilo de la lista
-        .background(Color.clear) // Elimina fondo gris
     }
 }
+
 
 #Preview {
     CatListView(viewModel: CatListViewModel(useCase: UseCatListService()))

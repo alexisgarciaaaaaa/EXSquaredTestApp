@@ -17,7 +17,7 @@ struct ListItemView: View {
                 AsyncImage(url: URL(string: imageURL)) { image in
                     image.resizable()
                          .scaledToFill()
-                         .frame(width: UIScreen.main.bounds.width - 50, height: 200) // Ajustando el ancho
+                         .frame(width: UIScreen.main.bounds.width - 50, height: 200)
                          .clipped()
                 } placeholder: {
                     ProgressView()
@@ -67,50 +67,5 @@ struct ListItemView: View {
         .background(Color(.systemBackground))
         .clipShape(RoundedRectangle(cornerRadius: 15))
         .shadow(radius: 5)
-    }
-}
-
-
-
-// Modelo para el gato
-struct Cat: Identifiable, Codable {
-    let id: String
-    let name: String?
-    let description: String?
-    let temperament: String?
-    let lifeSpan: String?
-    let energyLevel: Int?
-    let adaptability: Int?
-    let image: CatImage?
-    
-    enum CodingKeys: String, CodingKey {
-        case id, name, description, temperament, image
-        case lifeSpan = "life_span"  // Mapea "life_span" del JSON a "lifeSpan"
-        case energyLevel = "energy_level"
-        case adaptability
-    }
-}
-
-struct CatImage: Codable {
-    let url: String?
-}
-
-
-struct NoImageView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "photo")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 50, height: 50)
-                .foregroundColor(.gray)
-            
-            Text("No Image Available")
-                .font(.caption)
-                .foregroundColor(.gray)
-        }
-        .frame(width: UIScreen.main.bounds.width - 50, height: 200)
-        .background(Color.gray.opacity(0.3))
-        .clipShape(RoundedRectangle(cornerRadius: 15))
     }
 }

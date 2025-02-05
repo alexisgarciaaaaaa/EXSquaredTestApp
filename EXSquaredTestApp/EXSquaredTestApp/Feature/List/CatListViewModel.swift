@@ -13,6 +13,7 @@ class CatListViewModel: ObservableObject {
     @Published private(set) var isLoading: Bool = false
     @Published private(set) var errorMessage: String?
     @Published private(set) var isFetchingMore: Bool = false
+    @Published private(set) var isFirstLoad = true
     
     private let useCase: UseCatListRepository
     private var cancellables = Set<AnyCancellable>()
@@ -73,5 +74,12 @@ class CatListViewModel: ObservableObject {
                 }
             )
             .store(in: &cancellables)
+    }
+
+    func firstLoad() {
+        if isFirstLoad {
+            fetchCats()
+            isFirstLoad = false
+        }
     }
 }
