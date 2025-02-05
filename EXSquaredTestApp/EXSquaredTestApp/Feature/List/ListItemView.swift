@@ -13,30 +13,35 @@ struct ListItemView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            
-            AsyncImage(url: URL(string: cat.image.url)) { image in
-                image.resizable()
-                     .scaledToFill()
-            } placeholder: {
-                ProgressView()
+            if let imageURL = cat.image?.url {
+                AsyncImage(url: URL(string: imageURL)) { image in
+                    image.resizable()
+                         .scaledToFill()
+                         .frame(width: UIScreen.main.bounds.width - 50, height: 200) // Ajustando el ancho
+                         .clipped()
+                } placeholder: {
+                    ProgressView()
+                        .frame(width: UIScreen.main.bounds.width - 50, height: 200)
+                }
+                .clipShape(RoundedRectangle(cornerRadius: 15))
+            } else {
+                NoImageView()
             }
-            .frame(height: 200)
-            .clipShape(RoundedRectangle(cornerRadius: 15))
             
             VStack(alignment: .leading, spacing: 5) {
-                Text(cat.name)
+                Text(cat.name ?? "hola")
                     .font(.title2)
                     .fontWeight(.bold)
                     .foregroundColor(.primary)
                 
-                Text(cat.description)
+                Text(cat.description ?? "test")
                     .font(.body)
                     .foregroundColor(.secondary)
                     .lineLimit(3)
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
-                        ForEach(cat.temperament.split(separator: ",").map { String($0) }, id: \..self) { trait in
+                        ForEach(cat.temperament?.split(separator: ",").map { String($0) } ?? [], id: \.self) { trait in
                             Text(trait.trimmingCharacters(in: .whitespaces))
                                 .font(.caption)
                                 .padding(6)
@@ -47,15 +52,17 @@ struct ListItemView: View {
                 }
                 
                 HStack {
-                    Label("\(cat.lifeSpan) años", systemImage: "clock")
-                    Label("Energía: \(cat.energyLevel)", systemImage: "bolt.fill")
-                    Label("Adaptabilidad: \(cat.adaptability)", systemImage: "heart.fill")
+                    Label("\(cat.lifeSpan ?? "") years", systemImage: "clock")
+                    Label("Energy: \(cat.energyLevel ?? 0)", systemImage: "bolt.fill")
+                    Label("Adpt: \(cat.adaptability ?? 0)", systemImage: "heart.fill")
                 }
                 .font(.caption)
                 .foregroundColor(.gray)
+                
             }
             .padding(.horizontal)
         }
+        .frame(maxWidth: UIScreen.main.bounds.width - 50)
         .padding()
         .background(Color(.systemBackground))
         .clipShape(RoundedRectangle(cornerRadius: 15))
@@ -63,34 +70,47 @@ struct ListItemView: View {
     }
 }
 
-#Preview {
-    ListItemView(cat: Cat(
-        id: "abys",
-        name: "Abyssinian",
-        description: "The Abyssinian is easy to care for, and a joy to have in your home. They’re affectionate cats and love both people and other animals.",
-        temperament: "Active, Energetic, Independent, Intelligent, Gentle",
-        lifeSpan: "14 - 15",
-        energyLevel: 5,
-        adaptability: 5,
-        image: CatImage(url: "https://cdn2.thecatapi.com/images/0XYvRd7oD.jpg")
-    ))
-    .previewLayout(.sizeThatFits)
-}
-
 
 
 // Modelo para el gato
 struct Cat: Identifiable, Codable {
     let id: String
-    let name: String
-    let description: String
-    let temperament: String
-    let lifeSpan: String
-    let energyLevel: Int
-    let adaptability: Int
-    let image: CatImage
+    let name: String?
+    let description: String?
+    let temperament: String?
+    let lifeSpan: String?
+    let energyLevel: Int?
+    let adaptability: Int?
+    let image: CatImage?
+    
+    enum CodingKeys: String, CodingKey {
+        case id, name, description, temperament, image
+        case lifeSpan = "life_span"  // Mapea "life_span" del JSON a "lifeSpan"
+        case energyLevel = "energy_level"
+        case adaptability
+    }
 }
 
 struct CatImage: Codable {
-    let url: String
+    let url: String?
+}
+
+
+struct NoImageView: View {
+    var body: some View {
+        VStack {
+            Image(systemName: "photo")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 50, height: 50)
+                .foregroundColor(.gray)
+            
+            Text("No Image Available")
+                .font(.caption)
+                .foregroundColor(.gray)
+        }
+        .frame(width: UIScreen.main.bounds.width - 50, height: 200)
+        .background(Color.gray.opacity(0.3))
+        .clipShape(RoundedRectangle(cornerRadius: 15))
+    }
 }
