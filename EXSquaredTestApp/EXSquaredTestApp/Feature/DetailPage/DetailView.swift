@@ -17,30 +17,7 @@ struct DetailView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                AsyncImage(url: URL(string: "https://cdn2.thecatapi.com/images/\(viewModel.cat?.referenceImageID ?? "").jpg")) { phase in
-                    switch phase {
-                    case .success(let image):
-                        image
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(maxWidth: .infinity)
-                            .clipped()
-                            .padding(.horizontal)
-                        
-                    case .failure(_), .empty:
-                        NoImageView()
-                    case .empty:
-                        ProgressView()
-                            .frame(maxWidth: .infinity)
-                            .padding(.horizontal)
-                    @unknown default:
-                        ProgressView()
-                            .frame(maxWidth: .infinity)
-                            .padding(.horizontal)
-                    }
-                }
-                .clipShape(RoundedRectangle(cornerRadius: 12))
-                .shadow(radius: 4)
+                CatImageView(imageUrl: viewModel.cat?.referenceImageID ?? "")
                 
                 Text(viewModel.cat?.name ?? "")
                     .font(.title)

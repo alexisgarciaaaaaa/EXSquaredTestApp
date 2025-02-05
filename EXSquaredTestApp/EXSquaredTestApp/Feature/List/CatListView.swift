@@ -18,30 +18,11 @@ struct CatListView: View {
         NavigationView {
             List {
                 if viewModel.isLoading {
-                    ProgressView("Loading...")
+                    LoadingView()
                 } else if let errorMessage = viewModel.errorMessage {
-                    Text(errorMessage).foregroundColor(.red)
+                    ErrorView(message: errorMessage)
                 } else {
-                    ForEach(viewModel.cats) { cat in
-                        ZStack {
-                            ListItemView(cat: cat)
-                            NavigationLink(destination: DetailView(catId: cat.id)) {
-                                EmptyView()
-                            }
-                            .buttonStyle(PlainButtonStyle())
-                            .opacity(0)
-                        }
-                        .onAppear {
-                            if cat == viewModel.cats.last {
-                                viewModel.fetchMoreCats()
-                            }
-                        }
-                    }
-                    
-                    if viewModel.isFetchingMore {
-                        ProgressView()
-                            .padding()
-                    }
+                    catListSection
                 }
             }
             .onAppear(perform: viewModel.firstLoad)
@@ -52,14 +33,26 @@ struct CatListView: View {
     }
 }
 
+// MARK: - CatListView Subviews
+
+private extension CatListView {
+    var catListSection: some View {
+        Group {
+            ForEach(viewModel.cats) { cat in
+                CatListItemView(cat: cat)
+                    .onAppear {
+                        if cat == viewModel.cats.last {
+                            viewModel.fetchMoreCats()
+                        }
+                    }
+            }
+            if viewModel.isFetchingMore {
+                LoadingView()
+            }
+        }
+    }
+}
 
 #Preview {
     CatListView(viewModel: CatListViewModel(useCase: UseCatListService()))
-}
-
-
-extension Cat: Equatable {
-    static func == (lhs: Cat, rhs: Cat) -> Bool {
-        return lhs.id == rhs.id
-    }
 }
