@@ -14,4 +14,8 @@ class UseCatListService: UseCatListRepository {
     func fetchCatList(params: CatRequest) -> AnyPublisher<[Cat], Error> {
         return apiCLient.request(.fetchCatList(params: params))
     }
+    
+    func fetchCatDetail(id: String) -> AnyPublisher<CatDetail, Error> {
+        return apiCLient.request(.fetchCatDetail(id: id))
+    }
 }

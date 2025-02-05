@@ -10,4 +10,5 @@ import Combine
 
 protocol UseCatListRepository {
     func fetchCatList(params: CatRequest) -> AnyPublisher<[Cat], Error>
+    func fetchCatDetail(id: String) -> AnyPublisher<CatDetail, Error>
 }
