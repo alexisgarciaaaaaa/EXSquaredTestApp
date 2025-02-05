@@ -10,52 +10,49 @@ import Combine
 
 class CatListViewModel: ObservableObject {
     @Published private(set) var cats: [Cat] = []
-    @Published private(set) var isLoading: Bool = false
-    @Published private(set) var errorMessage: String?
+    @Published private(set) var loadingState: LoadingState = .idle
     @Published private(set) var isFetchingMore: Bool = false
-    @Published private(set) var isFirstLoad = true
+    @Published private(set) var errorMessage: String?
     
     private let useCase: UseCatListRepository
     private var cancellables = Set<AnyCancellable>()
-    private var currentPage = 1
-    private let limit = 10
-    private var hasMoreCats = true
+    private var paginationHandler = PaginationHandler()
     
     init(useCase: UseCatListRepository) {
         self.useCase = useCase
     }
     
     func fetchCats() {
-        guard !isLoading else { return }
-        isLoading = true
+        guard case .idle = loadingState else { return }
+        loadingState = .loading
         errorMessage = nil
-        currentPage = 1
-        hasMoreCats = true
+        paginationHandler.reset()
         
-        useCase.fetchCatList(params: CatRequest(limit: limit, page: currentPage))
+        useCase.fetchCatList(params: CatRequest(limit: paginationHandler.limit, page: 1))
             .receive(on: DispatchQueue.main)
-            .handleEvents(receiveCompletion: { [weak self] _ in
-                self?.isLoading = false
-            })
             .sink(
                 receiveCompletion: { [weak self] completion in
+                    guard let self = self else { return }
+                    self.loadingState = .idle
                     if case .failure(let error) = completion {
-                        self?.errorMessage = error.localizedDescription
+                        self.errorMessage = error.localizedDescription
+                        self.loadingState = .error(error.localizedDescription)
                     }
                 },
                 receiveValue: { [weak self] cats in
                     self?.cats = cats
+                    self?.paginationHandler.updateHasMore(!cats.isEmpty)
+                    self?.loadingState = .loaded
                 }
             )
             .store(in: &cancellables)
     }
     
     func fetchMoreCats() {
-        guard !isFetchingMore, hasMoreCats else { return }
+        guard let nextPage = paginationHandler.nextPage(), !isFetchingMore else { return }
         isFetchingMore = true
-        currentPage += 1
         
-        useCase.fetchCatList(params: CatRequest(limit: limit, page: currentPage))
+        useCase.fetchCatList(params: CatRequest(limit: paginationHandler.limit, page: nextPage))
             .receive(on: DispatchQueue.main)
             .sink(
                 receiveCompletion: { [weak self] completion in
@@ -66,20 +63,45 @@ class CatListViewModel: ObservableObject {
                 },
                 receiveValue: { [weak self] newCats in
                     guard let self = self else { return }
-                    if newCats.isEmpty {
-                        self.hasMoreCats = false
-                    } else {
-                        self.cats.append(contentsOf: newCats)
-                    }
+                    self.cats.append(contentsOf: newCats)
+                    self.paginationHandler.updateHasMore(!newCats.isEmpty)
                 }
             )
             .store(in: &cancellables)
     }
+}
 
-    func firstLoad() {
-        if isFirstLoad {
-            fetchCats()
-            isFirstLoad = false
-        }
+import Foundation
+
+class PaginationHandler {
+    private(set) var currentPage = 1
+    let limit: Int
+    private var hasMoreCats = true
+
+    init(limit: Int = 10) {
+        self.limit = limit
     }
+
+    func nextPage() -> Int? {
+        guard hasMoreCats else { return nil }
+        currentPage += 1
+        return currentPage
+    }
+
+    func reset() {
+        currentPage = 1
+        hasMoreCats = true
+    }
+
+    func updateHasMore(_ hasMore: Bool) {
+        hasMoreCats = hasMore
+    }
+}
+
+
+enum LoadingState {
+    case idle
+    case loading
+    case loaded
+    case error(String)
 }

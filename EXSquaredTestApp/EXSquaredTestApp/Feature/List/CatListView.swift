@@ -17,18 +17,25 @@ struct CatListView: View {
     var body: some View {
         NavigationView {
             List {
-                if viewModel.isLoading {
+                switch viewModel.loadingState {
+                case .loading:
                     LoadingView()
-                } else if let errorMessage = viewModel.errorMessage {
-                    ErrorView(message: errorMessage)
-                } else {
+                case .error(let message):
+                    ErrorView(message: message)
+                case .loaded, .idle:
                     catListSection
                 }
             }
-            .onAppear(perform: viewModel.firstLoad)
+            .onAppear(perform: firstLoad)
             .listStyle(PlainListStyle())
             .background(Color.clear)
             .navigationTitle("Cat Breeds")
+        }
+    }
+
+    private func firstLoad() {
+        if viewModel.cats.isEmpty {
+            viewModel.fetchCats()
         }
     }
 }
