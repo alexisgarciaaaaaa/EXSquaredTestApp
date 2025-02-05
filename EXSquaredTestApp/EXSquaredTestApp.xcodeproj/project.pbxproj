@@ -32,6 +32,8 @@
 		14FBA5462D54107200189406 /* CatListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FBA5452D54107200189406 /* CatListItemView.swift */; };
 		14FBA5482D54108C00189406 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FBA5472D54108C00189406 /* LoadingView.swift */; };
 		14FBA54A2D5410A300189406 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FBA5492D5410A300189406 /* ErrorView.swift */; };
+		14FBA54C2D5414BB00189406 /* CatStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FBA54B2D5414BB00189406 /* CatStatsView.swift */; };
+		14FBA54E2D5414C900189406 /* MoreInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FBA54D2D5414C900189406 /* MoreInfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +63,8 @@
 		14FBA5452D54107200189406 /* CatListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatListItemView.swift; sourceTree = "<group>"; };
 		14FBA5472D54108C00189406 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		14FBA5492D5410A300189406 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		14FBA54B2D5414BB00189406 /* CatStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatStatsView.swift; sourceTree = "<group>"; };
+		14FBA54D2D5414C900189406 /* MoreInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +168,7 @@
 				14FBA5332D53FAA000189406 /* CatDetailViewModel.swift */,
 				14FBA5352D540BD900189406 /* CatDetailModel.swift */,
 				14FBA5372D540C2B00189406 /* Components */,
+				14FBA54D2D5414C900189406 /* MoreInfoView.swift */,
 			);
 			path = DetailPage;
 			sourceTree = "<group>";
@@ -227,6 +232,7 @@
 				14FBA5382D540C3C00189406 /* CatInfoView.swift */,
 				14FBA53A2D540C5900189406 /* StatView.swift */,
 				14FBA5402D540ED200189406 /* CatImageView.swift */,
+				14FBA54B2D5414BB00189406 /* CatStatsView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -343,11 +349,13 @@
 				14FBA5212D53DF3D00189406 /* HTTPMethod.swift in Sources */,
 				14FBA53B2D540C5900189406 /* StatView.swift in Sources */,
 				14FBA5362D540BD900189406 /* CatDetailModel.swift in Sources */,
+				14FBA54C2D5414BB00189406 /* CatStatsView.swift in Sources */,
 				14FBA51A2D53DCA000189406 /* ListItemModel.swift in Sources */,
 				14FBA5462D54107200189406 /* CatListItemView.swift in Sources */,
 				14FBA4FE2D53D6CE00189406 /* EXSquaredTestAppApp.swift in Sources */,
 				14FBA5442D540F4500189406 /* Cat+Equable.swift in Sources */,
 				14FBA5302D53E35400189406 /* CatRequest.swift in Sources */,
+				14FBA54E2D5414C900189406 /* MoreInfoView.swift in Sources */,
 				14FBA51F2D53DF2500189406 /* APIEndpoint.swift in Sources */,
 				14FBA53F2D540D0100189406 /* NoImageView.swift in Sources */,
 				14FBA5482D54108C00189406 /* LoadingView.swift in Sources */,
