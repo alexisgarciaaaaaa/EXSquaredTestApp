@@ -12,7 +12,7 @@
 		14FBA5022D53D6CF00189406 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14FBA5012D53D6CF00189406 /* Assets.xcassets */; };
 		14FBA5052D53D6CF00189406 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14FBA5042D53D6CF00189406 /* Preview Assets.xcassets */; };
 		14FBA5132D53DC5000189406 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FBA5122D53DC5000189406 /* DetailView.swift */; };
-		14FBA5162D53DC8500189406 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FBA5152D53DC8500189406 /* ListView.swift */; };
+		14FBA5162D53DC8500189406 /* CatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FBA5152D53DC8500189406 /* CatListView.swift */; };
 		14FBA5182D53DC9000189406 /* ListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FBA5172D53DC9000189406 /* ListItemView.swift */; };
 		14FBA51A2D53DCA000189406 /* ListItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FBA5192D53DCA000189406 /* ListItemModel.swift */; };
 		14FBA51D2D53DF0600189406 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FBA51C2D53DF0600189406 /* APIClient.swift */; };
@@ -22,6 +22,7 @@
 		14FBA52A2D53E1C400189406 /* UseCatListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FBA5292D53E1C400189406 /* UseCatListRepository.swift */; };
 		14FBA52D2D53E2B100189406 /* UseCatListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FBA52C2D53E2B100189406 /* UseCatListService.swift */; };
 		14FBA5302D53E35400189406 /* CatRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FBA52F2D53E35400189406 /* CatRequest.swift */; };
+		14FBA5322D53E4DF00189406 /* CatListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FBA5312D53E4DF00189406 /* CatListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +32,7 @@
 		14FBA5012D53D6CF00189406 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		14FBA5042D53D6CF00189406 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		14FBA5122D53DC5000189406 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
-		14FBA5152D53DC8500189406 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		14FBA5152D53DC8500189406 /* CatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatListView.swift; sourceTree = "<group>"; };
 		14FBA5172D53DC9000189406 /* ListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemView.swift; sourceTree = "<group>"; };
 		14FBA5192D53DCA000189406 /* ListItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemModel.swift; sourceTree = "<group>"; };
 		14FBA51C2D53DF0600189406 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
@@ -41,6 +42,7 @@
 		14FBA5292D53E1C400189406 /* UseCatListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCatListRepository.swift; sourceTree = "<group>"; };
 		14FBA52C2D53E2B100189406 /* UseCatListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCatListService.swift; sourceTree = "<group>"; };
 		14FBA52F2D53E35400189406 /* CatRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatRequest.swift; sourceTree = "<group>"; };
+		14FBA5312D53E4DF00189406 /* CatListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,9 +149,10 @@
 		14FBA5142D53DC7000189406 /* List */ = {
 			isa = PBXGroup;
 			children = (
-				14FBA5152D53DC8500189406 /* ListView.swift */,
+				14FBA5152D53DC8500189406 /* CatListView.swift */,
 				14FBA5172D53DC9000189406 /* ListItemView.swift */,
 				14FBA5192D53DCA000189406 /* ListItemModel.swift */,
+				14FBA5312D53E4DF00189406 /* CatListViewModel.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -268,8 +271,9 @@
 			files = (
 				14FBA5182D53DC9000189406 /* ListItemView.swift in Sources */,
 				14FBA5242D53DF7F00189406 /* CatAPI.swift in Sources */,
+				14FBA5322D53E4DF00189406 /* CatListViewModel.swift in Sources */,
 				14FBA51D2D53DF0600189406 /* APIClient.swift in Sources */,
-				14FBA5162D53DC8500189406 /* ListView.swift in Sources */,
+				14FBA5162D53DC8500189406 /* CatListView.swift in Sources */,
 				14FBA52D2D53E2B100189406 /* UseCatListService.swift in Sources */,
 				14FBA5002D53D6CE00189406 /* ContentView.swift in Sources */,
 				14FBA52A2D53E1C400189406 /* UseCatListRepository.swift in Sources */,

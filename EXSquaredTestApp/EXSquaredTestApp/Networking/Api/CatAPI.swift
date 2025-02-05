@@ -43,8 +43,8 @@ enum CatAPI: APIEndpoint{
         switch self {
         case .fetchCatList(let params):
             return [
-                "limit": "1",
-                "page": "0"
+                "limit": params.limit,
+                "page": params.page
             ]
         }
     }
