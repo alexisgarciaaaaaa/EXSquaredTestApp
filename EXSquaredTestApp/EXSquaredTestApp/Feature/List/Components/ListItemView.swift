@@ -17,24 +17,24 @@ struct ListItemView: View {
                 AsyncImage(url: URL(string: imageURL)) { image in
                     image.resizable()
                          .scaledToFill()
-                         .frame(width: UIScreen.main.bounds.width - 50, height: 200)
+                         .frame(width: K.UIConfig.cardWidth, height: K.UIConfig.cardHeight)
                          .clipped()
                 } placeholder: {
                     ProgressView()
-                        .frame(width: UIScreen.main.bounds.width - 50, height: 200)
+                        .frame(width: K.UIConfig.cardWidth, height: K.UIConfig.cardHeight)
                 }
-                .clipShape(RoundedRectangle(cornerRadius: 15))
+                .clipShape(RoundedRectangle(cornerRadius: K.UIConfig.cardCornerRadius))
             } else {
                 NoImageView()
             }
             
             VStack(alignment: .leading, spacing: 5) {
-                Text(cat.name ?? "hola")
+                Text(cat.name ?? K.Strings.defaultCatName)
                     .font(.title2)
                     .fontWeight(.bold)
                     .foregroundColor(.primary)
                 
-                Text(cat.description ?? "test")
+                Text(cat.description ?? K.Strings.defaultDescription)
                     .font(.body)
                     .foregroundColor(.secondary)
                     .lineLimit(3)
@@ -44,7 +44,7 @@ struct ListItemView: View {
                         ForEach(cat.temperament?.split(separator: ",").map { String($0) } ?? [], id: \.self) { trait in
                             Text(trait.trimmingCharacters(in: .whitespaces))
                                 .font(.caption)
-                                .padding(6)
+                                .padding(K.UIConfig.tagPadding)
                                 .background(Color.blue.opacity(0.2))
                                 .clipShape(RoundedRectangle(cornerRadius: 10))
                         }
@@ -52,9 +52,9 @@ struct ListItemView: View {
                 }
                 
                 HStack {
-                    Label("\(cat.lifeSpan ?? "") years", systemImage: "clock")
-                    Label("Energy: \(cat.energyLevel ?? 0)", systemImage: "bolt.fill")
-                    Label("Adpt: \(cat.adaptability ?? 0)", systemImage: "heart.fill")
+                    Label("\(cat.lifeSpan ?? "") \(K.Strings.yearsLabel)", systemImage: "clock")
+                    Label("\(K.Strings.energyLabel) \(cat.energyLevel ?? 0)", systemImage: "bolt.fill")
+                    Label("\(K.Strings.adaptabilityLabel) \(cat.adaptability ?? 0)", systemImage: "heart.fill")
                 }
                 .font(.caption)
                 .foregroundColor(.gray)
@@ -62,10 +62,10 @@ struct ListItemView: View {
             }
             .padding(.horizontal)
         }
-        .frame(maxWidth: UIScreen.main.bounds.width - 50)
+        .frame(maxWidth: K.UIConfig.cardWidth)
         .padding()
         .background(Color(.systemBackground))
-        .clipShape(RoundedRectangle(cornerRadius: 15))
-        .shadow(radius: 5)
+        .clipShape(RoundedRectangle(cornerRadius: K.UIConfig.cardCornerRadius))
+        .shadow(radius: K.UIConfig.shadowRadius)
     }
 }

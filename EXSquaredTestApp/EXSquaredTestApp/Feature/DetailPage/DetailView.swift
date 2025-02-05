@@ -19,17 +19,17 @@ struct DetailView: View {
             VStack(alignment: .leading, spacing: 16) {
                 CatImageView(imageUrl: viewModel.cat?.referenceImageID ?? "")
                 
-                Text(viewModel.cat?.name ?? "Unknown")
+                Text(viewModel.cat?.name ?? K.Strings.unknown)
                     .font(.title)
                     .bold()
                 
-                Text(viewModel.cat?.description ?? "No description available")
+                Text(viewModel.cat?.description ?? K.Strings.noDescription)
                     .font(.body)
                     .foregroundColor(.gray)
                 
-                CatInfoView(title: "Origin", value: viewModel.cat?.origin ?? "Unknown")
-                CatInfoView(title: "Life Span", value: "\(viewModel.cat?.lifeSpan ?? "N/A") years")
-                CatInfoView(title: "Temperament", value: viewModel.cat?.temperament ?? "Unknown")
+                CatInfoView(title: K.Strings.origin, value: viewModel.cat?.origin ?? K.Strings.unknown)
+                CatInfoView(title: K.Strings.lifeSpan, value: "\(viewModel.cat?.lifeSpan ?? K.Strings.notAvailable) \(K.Strings.years)")
+                CatInfoView(title: K.Strings.temperament, value: viewModel.cat?.temperament ?? K.Strings.unknown)
                 
                 CatStatsView(viewModel: viewModel)
                 
@@ -38,7 +38,7 @@ struct DetailView: View {
             }
             .padding()
         }
-        .navigationTitle(viewModel.cat?.name ?? "Detail")
+        .navigationTitle(viewModel.cat?.name ??  K.Strings.detailTitle)
     }
 }
 

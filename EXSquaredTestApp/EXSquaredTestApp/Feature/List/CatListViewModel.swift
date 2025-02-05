@@ -28,7 +28,7 @@ class CatListViewModel: ObservableObject {
         errorMessage = nil
         paginationHandler.reset()
         
-        useCase.fetchCatList(params: CatRequest(limit: paginationHandler.limit, page: 1))
+        useCase.fetchCatList(params: CatRequest(limit: paginationHandler.limit, page: K.Pagination.initialPage))
             .receive(on: DispatchQueue.main)
             .sink(
                 receiveCompletion: { [weak self] completion in
@@ -69,39 +69,4 @@ class CatListViewModel: ObservableObject {
             )
             .store(in: &cancellables)
     }
-}
-
-import Foundation
-
-class PaginationHandler {
-    private(set) var currentPage = 1
-    let limit: Int
-    private var hasMoreCats = true
-
-    init(limit: Int = 10) {
-        self.limit = limit
-    }
-
-    func nextPage() -> Int? {
-        guard hasMoreCats else { return nil }
-        currentPage += 1
-        return currentPage
-    }
-
-    func reset() {
-        currentPage = 1
-        hasMoreCats = true
-    }
-
-    func updateHasMore(_ hasMore: Bool) {
-        hasMoreCats = hasMore
-    }
-}
-
-
-enum LoadingState {
-    case idle
-    case loading
-    case loaded
-    case error(String)
 }

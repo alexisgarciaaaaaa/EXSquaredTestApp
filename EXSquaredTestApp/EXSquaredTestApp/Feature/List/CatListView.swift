@@ -29,7 +29,7 @@ struct CatListView: View {
             .onAppear(perform: firstLoad)
             .listStyle(PlainListStyle())
             .background(Color.clear)
-            .navigationTitle("Cat Breeds")
+            .navigationTitle(K.Strings.navigationTitle)
         }
     }
 
