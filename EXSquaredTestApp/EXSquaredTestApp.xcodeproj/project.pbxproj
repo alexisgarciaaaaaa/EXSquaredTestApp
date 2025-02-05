@@ -51,8 +51,12 @@
 		14FBA4FC2D53D6CE00189406 /* EXSquaredTestApp */ = {
 			isa = PBXGroup;
 			children = (
-				14FBA4FD2D53D6CE00189406 /* EXSquaredTestAppApp.swift */,
-				14FBA4FF2D53D6CE00189406 /* ContentView.swift */,
+				14FBA50B2D53D8C800189406 /* App */,
+				14FBA50C2D53D8DE00189406 /* Feature */,
+				14FBA50D2D53D8F000189406 /* Networking */,
+				14FBA50E2D53D90200189406 /* Services */,
+				14FBA50F2D53D91000189406 /* Utils */,
+				14FBA5102D53D91E00189406 /* UI Components  */,
 				14FBA5012D53D6CF00189406 /* Assets.xcassets */,
 				14FBA5032D53D6CF00189406 /* Preview Content */,
 			);
@@ -65,6 +69,50 @@
 				14FBA5042D53D6CF00189406 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		14FBA50B2D53D8C800189406 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				14FBA4FD2D53D6CE00189406 /* EXSquaredTestAppApp.swift */,
+				14FBA4FF2D53D6CE00189406 /* ContentView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		14FBA50C2D53D8DE00189406 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		14FBA50D2D53D8F000189406 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		14FBA50E2D53D90200189406 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		14FBA50F2D53D91000189406 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		14FBA5102D53D91E00189406 /* UI Components  */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "UI Components ";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
