@@ -2,6 +2,22 @@
 
 EXSquaredTestApp is a cutting-edge iOS application developed in Swift, leveraging SwiftUI and Combine. It follows Clean Architecture principles and adheres strictly to SOLID principles to ensure modularity, scalability, and maintainability.
 
+# 🐱 CatExplorer - iOS App  
+A SwiftUI-based iOS app that fetches and displays a list of cats with details.
+
+## 🚀 Features
+- Infinite scrolling for cat list
+- API integration for fetching cat details
+- Image caching for better performance
+- Clean architecture following SOLID principles
+- Unit and UI tests for key components
+
+## 📦 Tech Stack
+- **SwiftUI** - UI Framework  
+- **Combine** - Reactive programming  
+- **CacheManager** - Custom image caching  
+- **XCTest** - Unit & UI testing  
+
 ## Set up
 #### Prerequisites
 ```bash
