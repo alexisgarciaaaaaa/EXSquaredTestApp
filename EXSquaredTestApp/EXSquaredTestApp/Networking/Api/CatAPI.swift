@@ -13,9 +13,12 @@ enum CatAPI: APIEndpoint{
     case fetchCatDetail(id: String)
     
     var baseURL: URL {
-        return URL(string: "https://api.thecatapi.com/v1/")!
+        guard let url = URL(string: K.API.baseURL) else {
+            fatalError("⚠️ BASE_URL inválida en Info.plist")
+        }
+        return url
     }
-    
+
     var path: String {
         switch self {
         case .fetchCatList:
@@ -35,13 +38,13 @@ enum CatAPI: APIEndpoint{
     }
     
     var headers: [String : String]? {
-        switch self {
-        case .fetchCatList, .fetchCatDetail:
-            return [
-                "Content-type": "application/json",
-                "x-api-key": "live_m1fWbID5o7yaDpBcOSsNOCNbfyYInELyHqspc1g4vW4mjCCN9VeGamxn8zZlfM0d"
-            ]
-        }
+        var headers: [String: String] = [
+            "Content-Type": "application/json"
+        ]
+        
+        headers["x-api-key"] = K.API.apiKey
+        
+        return headers
     }
     
     var parameters: [String : Any]? {

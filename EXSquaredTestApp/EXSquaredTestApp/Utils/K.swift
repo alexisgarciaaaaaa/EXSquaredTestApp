@@ -52,4 +52,10 @@ struct K {
         static let vetstreet = NSLocalizedString("vetstreet", comment: "Label for Vetstreet link")
         static let vcaHospitals = NSLocalizedString("vca_hospitals", comment: "Label for VCA Hospitals link")
     }
+    
+    struct API {
+        static let baseURL = EnvManager.shared.get("BASE_URL") ?? "https://api.default.com"
+        static let apiKey = EnvManager.shared.get("API_KEY") ?? "default-api-key"
+        static let imageBaseURL = EnvManager.shared.get("IMAGE_BASE_URL") ?? "https://cdn2.thecatapi.com/images/"
+    }
 }

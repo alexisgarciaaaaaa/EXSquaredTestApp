@@ -11,7 +11,7 @@ struct CatImageView: View {
     let imageUrl: String?
 
     var body: some View {
-        AsyncImage(url: URL(string: "https://cdn2.thecatapi.com/images/\(imageUrl ?? "").jpg")) { phase in
+        AsyncImage(url: URL(string: "\(K.API.imageBaseURL)\(imageUrl ?? "").jpg")) { phase in
             switch phase {
             case .success(let image):
                 image

@@ -8,6 +8,12 @@
             "state" : "new",
             "value" : "%1$@ %2$@"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
         }
       }
     },
@@ -17,6 +23,12 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "%1$@ %2$lld"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
           }
         }
       }
@@ -32,7 +44,7 @@
         },
         "es" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Adaptability"
           }
         }
@@ -45,6 +57,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Adpt"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
           }
         }
       }
@@ -60,7 +78,7 @@
         },
         "es" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Affection Level"
           }
         }
@@ -77,7 +95,7 @@
         },
         "es" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Cat Breeds"
           }
         }
@@ -94,7 +112,7 @@
         },
         "es" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "CFA"
           }
         }
@@ -111,14 +129,22 @@
         },
         "es" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Child Friendly"
           }
         }
       }
     },
     "colon_separator" : {
-      "comment" : "Separator for title and value"
+      "comment" : "Separator for title and value",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "colonSeparator" : {
       "extractionState" : "manual",
@@ -131,7 +157,7 @@
         },
         "es" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : ":"
           }
         }
@@ -145,6 +171,12 @@
             "state" : "translated",
             "value" : "otto"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
         }
       }
     },
@@ -155,6 +187,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Test"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
           }
         }
       }
@@ -181,7 +219,7 @@
         },
         "es" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Dog Friendly"
           }
         }
@@ -195,12 +233,24 @@
             "state" : "translated",
             "value" : "Energy"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Energy"
+          }
         }
       }
     },
     "intelligence" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Intelligence"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -212,6 +262,12 @@
     "life_span" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Life Span"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -221,7 +277,14 @@
       }
     },
     "Loading..." : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading..."
+          }
+        }
+      }
     },
     "more_info" : {
       "extractionState" : "manual",
@@ -241,11 +304,24 @@
       }
     },
     "No Image Available" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Image Available"
+          }
+        }
+      }
     },
     "no_description" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No description available"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -257,6 +333,12 @@
     "not_Available" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "N/A"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -268,6 +350,12 @@
     "origin" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Origin"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -279,6 +367,12 @@
     "temperament" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Temperament"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -326,7 +420,7 @@
         },
         "es" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Vetstreet"
           }
         }
@@ -343,19 +437,33 @@
         },
         "es" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Wikipedia"
           }
         }
       }
     },
     "years" : {
-      "comment" : "Label for years in lifespan"
+      "comment" : "Label for years in lifespan",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "years"
+          }
+        }
+      }
     },
     "years_label" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Years"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Years"
