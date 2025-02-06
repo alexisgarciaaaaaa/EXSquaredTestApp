@@ -27,7 +27,6 @@ final class CatDetailViewModelTests: XCTestCase {
         super.tearDown()
     }
 
-    // ✅ 1️⃣ Prueba que el ViewModel se inicializa correctamente
     func test_initialization_triggersFetchCatDetails() {
         mockUseCase.mockDetailResponse = CatDetail.mock(name: "Siamese")
 
@@ -46,7 +45,6 @@ final class CatDetailViewModelTests: XCTestCase {
         wait(for: [expectation], timeout: 2)
     }
 
-    // ✅ 2️⃣ Prueba que `fetchCatDetails()` obtiene los detalles correctamente
     func test_fetchCatDetails_success() {
         mockUseCase.mockDetailResponse = CatDetail.mock()
 

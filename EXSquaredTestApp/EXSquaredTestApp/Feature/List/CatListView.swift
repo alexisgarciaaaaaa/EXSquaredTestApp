@@ -20,12 +20,15 @@ struct CatListView: View {
                 switch viewModel.loadingState {
                 case .loading:
                     LoadingView()
+                        .accessibilityIdentifier("loadingIndicator")
                 case .error(let message):
                     ErrorView(message: message)
+                        .accessibilityIdentifier("errorViewMessage")
                 case .loaded, .idle:
                     catListSection
                 }
             }
+            .accessibilityIdentifier("catListView")
             .onAppear(perform: firstLoad)
             .listStyle(PlainListStyle())
             .background(Color.clear)
@@ -47,6 +50,7 @@ private extension CatListView {
         Group {
             ForEach(viewModel.cats) { cat in
                 CatListItemView(cat: cat)
+                    .accessibilityIdentifier("catName_\(cat.id)")
                     .onAppear {
                         if cat == viewModel.cats.last {
                             viewModel.fetchMoreCats()

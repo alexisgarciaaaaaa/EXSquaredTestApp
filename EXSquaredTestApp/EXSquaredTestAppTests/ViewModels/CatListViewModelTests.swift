@@ -28,7 +28,6 @@ final class CatListViewModelTests: XCTestCase {
         super.tearDown()
     }
     
-    // ✅ 1️⃣ Estado inicial del ViewModel
     func test_initialState() {
         XCTAssertEqual(viewModel.cats.count, 0)
         XCTAssertEqual(viewModel.loadingState, .idle)
@@ -36,7 +35,6 @@ final class CatListViewModelTests: XCTestCase {
         XCTAssertNil(viewModel.errorMessage)
     }
     
-    // ✅ 2️⃣ Prueba que `fetchCats` carga correctamente los datos
     func test_fetchCats_success() {
         mockUseCase.initialResponse = [
             Cat(
@@ -67,7 +65,6 @@ final class CatListViewModelTests: XCTestCase {
         wait(for: [expectation], timeout: 2)
     }
     
-    // ✅ 3️⃣ Prueba que `fetchCats` maneja errores correctamente
     func test_fetchCats_failure() {
         mockUseCase.shouldReturnError = true
         
@@ -88,9 +85,7 @@ final class CatListViewModelTests: XCTestCase {
         wait(for: [expectation], timeout: 2)
     }
     
-    // ✅ 4️⃣ Prueba que `fetchMoreCats` agrega nuevos gatos a la lista
     func test_fetchMoreCats_success() {
-        // Primera respuesta de la API
         mockUseCase.initialResponse = [
             Cat(
                 id: "1",
@@ -138,7 +133,6 @@ final class CatListViewModelTests: XCTestCase {
     }
 
     
-    // ✅ 5️⃣ Prueba que `fetchMoreCats` maneja el error correctamente
     func test_fetchMoreCats_failure() {
         viewModel.fetchCats()
         mockUseCase.shouldReturnError = true
