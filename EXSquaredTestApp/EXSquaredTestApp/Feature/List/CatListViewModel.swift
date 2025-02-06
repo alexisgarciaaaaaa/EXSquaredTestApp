@@ -11,8 +11,8 @@ import Combine
 class CatListViewModel: ObservableObject {
     @Published private(set) var cats: [Cat] = []
     @Published private(set) var loadingState: LoadingState = .idle
-    @Published private(set) var isFetchingMore: Bool = false
     @Published private(set) var errorMessage: String?
+    @Published var isFetchingMore: Bool = false
     
     private let useCase: UseCatListRepository
     private var cancellables = Set<AnyCancellable>()
