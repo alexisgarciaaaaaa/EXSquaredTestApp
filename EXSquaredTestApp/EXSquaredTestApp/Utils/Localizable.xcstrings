@@ -276,7 +276,25 @@
         }
       }
     },
+    "loading_text" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading..."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Loading..."
+          }
+        }
+      }
+    },
     "Loading..." : {
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -304,6 +322,7 @@
       }
     },
     "No Image Available" : {
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -326,6 +345,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "No description available"
+          }
+        }
+      }
+    },
+    "no_image_available" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Image Available"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Image Available"
           }
         }
       }

@@ -19,11 +19,15 @@ struct CachedAsyncImage: View {
                 Image(uiImage: image)
                     .resizable()
                     .scaledToFill()
-                    .frame(width: K.UIConfig.cardWidth, height: K.UIConfig.cardHeight)
+                    .frame(
+                        width: K.UIConfig.cardWidth,
+                        height: K.UIConfig.cardHeight)
                     .clipped()
             } else if isLoading {
                 ProgressView()
-                    .frame(width: K.UIConfig.cardWidth, height: K.UIConfig.cardHeight)
+                    .frame(
+                        width: K.UIConfig.cardWidth,
+                        height: K.UIConfig.cardHeight)
                     .progressViewStyle(CircularProgressViewStyle())
             }
         }

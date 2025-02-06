@@ -8,7 +8,6 @@
 *.xcodeproj/xcuserdata/
 *.xcodeproj/xcshareddata/
 DerivedData/
-Config.xcconfig
 .idea/
 *.pbxuser
 *.mode1v3

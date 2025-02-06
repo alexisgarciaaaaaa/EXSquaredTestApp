@@ -16,7 +16,7 @@ struct NoImageView: View {
                 .frame(width: 50, height: 50)
                 .foregroundColor(.gray)
             
-            Text("No Image Available")
+            Text(K.Strings.noImageAvailable)
                 .font(.caption)
                 .foregroundColor(.gray)
         }

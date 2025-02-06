@@ -6,6 +6,7 @@
 //
 
 import XCTest
+@testable import EXSquaredTestApp
 
 final class DetailViewUITests: XCTestCase {
     var app: XCUIApplication!
@@ -13,7 +14,7 @@ final class DetailViewUITests: XCTestCase {
     override func setUp() {
         continueAfterFailure = false
         app = XCUIApplication()
-        app.launchArguments.append("--uitesting")
+        app.launchArguments.append(K.Test.testingArgument)
         app.launch()
     }
 
@@ -21,15 +22,16 @@ final class DetailViewUITests: XCTestCase {
         app.terminate()
         super.tearDown()
     }
+
     func navigateToDetailView() {
-            let firstCell = app.cells.element(boundBy: 0)
-            XCTAssertTrue(firstCell.waitForExistence(timeout: 20), "The first cat item should exist")
+        let firstCell = app.cells.element(boundBy: 0)
+        XCTAssertTrue(firstCell.waitForExistence(timeout: 20), K.Test.firstItemNotFound)
 
-            firstCell.tap()
+        firstCell.tap()
 
-            let detailView = app.staticTexts["detailViewTitle"]
-            XCTAssertTrue(detailView.exists, "Detail view should be displayed after tapping a cat")
-        }
+        let detailView = app.staticTexts[K.Test.detailViewTitle]
+        XCTAssertTrue(detailView.exists, K.Test.detailViewNotDisplayed)
+    }
 
     func test_navigateToDetailView() {
         navigateToDetailView()
@@ -38,27 +40,27 @@ final class DetailViewUITests: XCTestCase {
     func test_detailViewDisplaysCorrectInfo() {
         navigateToDetailView()
         
-        let description = app.staticTexts["detailViewDescription"]
-        XCTAssertTrue(description.exists, "The cat description should be displayed")
+        let description = app.staticTexts[K.Test.detailViewDescription]
+        XCTAssertTrue(description.exists, K.Test.descriptionNotFound)
     }
 
     func test_detailViewDisplaysCatInfo() {
         navigateToDetailView()
 
-        let origin = app.staticTexts["Origin"]
-        XCTAssertTrue(origin.exists, "Origin should be displayed")
+        let origin = app.staticTexts[K.Test.detailViewOrigin]
+        XCTAssertTrue(origin.exists, K.Test.originNotFound)
 
-        let lifeSpan = app.staticTexts["Life Span"]
-        XCTAssertTrue(lifeSpan.exists, "Life Span should be displayed")
+        let lifeSpan = app.staticTexts[K.Test.detailViewLifeSpan]
+        XCTAssertTrue(lifeSpan.exists, K.Test.lifeSpanNotFound)
 
-        let temperament = app.staticTexts["Temperament"]
-        XCTAssertTrue(temperament.exists, "Temperament should be displayed")
+        let temperament = app.staticTexts[K.Test.detailViewTemperament]
+        XCTAssertTrue(temperament.exists, K.Test.temperamentNotFound)
     }
 
     func test_detailViewDisplaysCatImage() {
         navigateToDetailView()
 
-        let catImage = app.images["catImageView"]
-        XCTAssertTrue(catImage.exists, "The cat image should be displayed")
+        let catImage = app.images[K.Test.catImageView]
+        XCTAssertTrue(catImage.exists, K.Test.catImageNotFound)
     }
 }

@@ -14,7 +14,7 @@ final class CatListViewUITests: XCTestCase {
     override func setUp() {
         continueAfterFailure = false
         app = XCUIApplication()
-        app.launchArguments.append("--uitesting")
+        app.launchArguments.append(K.Test.testingArgument)
         app.launch()
     }
 
@@ -24,39 +24,39 @@ final class CatListViewUITests: XCTestCase {
     }
 
     func test_catListViewLoadsSuccessfully() {
-        let title = app.staticTexts["Cat Breeds"]
-        XCTAssertTrue(title.exists, "The navigation title should be visible")
+        let title = app.staticTexts[K.Test.catListTitle]
+        XCTAssertTrue(title.exists, K.Test.navigationVisibleTitle)
         
         let firstCell = app.cells.element(boundBy: 0)
-        XCTAssertTrue(firstCell.waitForExistence(timeout: 5), "The first cat item should load within 5 seconds")
+        XCTAssertTrue(firstCell.waitForExistence(timeout: 5),K.Test.firstCatItemError)
     }
 
     func test_catListDisplaysMultipleItems() {
         let firstCell = app.cells.element(boundBy: 0)
         let secondCell = app.cells.element(boundBy: 1)
 
-        XCTAssertTrue(firstCell.waitForExistence(timeout: 5), "The first cat item should exist")
-        XCTAssertTrue(secondCell.exists, "The second cat item should also be displayed")
+        XCTAssertTrue(firstCell.waitForExistence(timeout: 5), K.Test.multipleItemsError)
+        XCTAssertTrue(secondCell.exists, K.Test.secondItemError)
     }
 
     func test_scrollFetchesMoreCats() {
         let firstCell = app.cells.element(boundBy: 0)
-        XCTAssertTrue(firstCell.waitForExistence(timeout: 5), "The first cat item should exist")
+        XCTAssertTrue(firstCell.waitForExistence(timeout: 5), K.Test.multipleItemsError)
 
         app.swipeUp()
         app.swipeUp()
 
         let newItem = app.cells.element(boundBy: 3) // Checking for a new item
-        XCTAssertTrue(newItem.waitForExistence(timeout: 5), "Newly fetched items should appear after scrolling")
+        XCTAssertTrue(newItem.waitForExistence(timeout: 5), K.Test.newItemError)
     }
 
     func test_navigationToCatDetailView() {
         let firstCell = app.cells.element(boundBy: 0)
-        XCTAssertTrue(firstCell.waitForExistence(timeout: 5), "The first cat item should exist")
+        XCTAssertTrue(firstCell.waitForExistence(timeout: 5), K.Test.multipleItemsError)
 
         firstCell.tap()
-        let detailView = app.staticTexts["detailViewTitle"]
-        XCTAssertTrue(detailView.exists, "Detail view should be displayed after tapping a cat")
+        let detailView = app.staticTexts[K.Test.detailViewTitle]
+        XCTAssertTrue(detailView.exists, K.Test.detailViewError)
     }
 }
 

@@ -12,8 +12,8 @@ struct CatListView: View {
     
     init(viewModel: CatListViewModel = CatListViewModel(useCase: UseCatListService())) {
         let isUITesting = ProcessInfo.processInfo.arguments.contains("--uitesting")
-                    let mockService = MockCatListService()
-                    let viewModelInject = CatListViewModel(useCase: isUITesting ? mockService : UseCatListService())
+        let mockService = MockCatListService()
+        let viewModelInject = CatListViewModel(useCase: isUITesting ? mockService : UseCatListService())
         _viewModel = StateObject(wrappedValue: viewModelInject)
     }
     
@@ -23,22 +23,22 @@ struct CatListView: View {
                 switch viewModel.loadingState {
                 case .loading:
                     LoadingView()
-                        .accessibilityIdentifier("loadingIndicator")
+                        .accessibilityIdentifier(K.AccessibilityIdentifiers.loadingIndicator)
                 case .error(let message):
                     ErrorView(message: message)
-                        .accessibilityIdentifier("errorViewMessage")
+                        .accessibilityIdentifier(K.AccessibilityIdentifiers.errorViewMessage)
                 case .loaded, .idle:
                     catListSection
                 }
             }
-            .accessibilityIdentifier("catListView")
+            .accessibilityIdentifier(K.AccessibilityIdentifiers.catListView)
             .onAppear(perform: firstLoad)
             .listStyle(PlainListStyle())
             .background(Color.clear)
             .navigationTitle(K.Strings.navigationTitle)
         }
     }
-
+    
     private func firstLoad() {
         if viewModel.cats.isEmpty {
             viewModel.fetchCats()
@@ -53,7 +53,7 @@ private extension CatListView {
         Group {
             ForEach(viewModel.cats) { cat in
                 CatListItemView(cat: cat)
-                    .accessibilityIdentifier("catName_\(cat.id)")
+                    .accessibilityIdentifier("\(K.AccessibilityIdentifiers.catNamePrefix)\(cat.id)")
                     .onAppear {
                         if cat == viewModel.cats.last {
                             viewModel.fetchMoreCats()

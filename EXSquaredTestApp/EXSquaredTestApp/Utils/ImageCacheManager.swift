@@ -11,7 +11,7 @@ class ImageCacheManager {
     static let shared = ImageCacheManager()
 
     var cache = NSCache<NSString, UIImage>()
-    private let session: URLSession  // ✅ Hacemos que use una sesión inyectada
+    private let session: URLSession
 
     init(session: URLSession = .shared) {
         self.session = session

@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1485D7D92D550D1800D186B9 /* DetailViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1485D7D82D550D1800D186B9 /* DetailViewUITests.swift */; };
+		14B8A0762D552BCB00CBDFC6 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FBA54F2D541BB100189406 /* K.swift */; };
+		14B8A0772D552BCD00CBDFC6 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FBA54F2D541BB100189406 /* K.swift */; };
+		14B8A0782D552BE900CBDFC6 /* EnvManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FBA55C2D54611600189406 /* EnvManager.swift */; };
+		14B8A0792D552BEA00CBDFC6 /* EnvManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FBA55C2D54611600189406 /* EnvManager.swift */; };
 		14FBA4FE2D53D6CE00189406 /* EXSquaredTestAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FBA4FD2D53D6CE00189406 /* EXSquaredTestAppApp.swift */; };
 		14FBA5022D53D6CF00189406 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14FBA5012D53D6CF00189406 /* Assets.xcassets */; };
 		14FBA5052D53D6CF00189406 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14FBA5042D53D6CF00189406 /* Preview Assets.xcassets */; };
@@ -561,11 +565,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				14FBA5802D54790E00189406 /* URLSessionMock.swift in Sources */,
+				14B8A0772D552BCD00CBDFC6 /* K.swift in Sources */,
 				14FBA5742D546A9A00189406 /* MockCatListService.swift in Sources */,
 				14FBA57E2D5478ED00189406 /* ImageCacheManagerTests.swift in Sources */,
 				14FBA5762D546BF600189406 /* MockModels.swift in Sources */,
 				14FBA57B2D54746600189406 /* CatDetailViewModelTests.swift in Sources */,
 				14FBA5712D546A4000189406 /* CatListViewModelTests.swift in Sources */,
+				14B8A0782D552BE900CBDFC6 /* EnvManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -574,7 +580,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				14FBA5912D5490A600189406 /* CatListViewUITests.swift in Sources */,
+				14B8A0762D552BCB00CBDFC6 /* K.swift in Sources */,
 				1485D7D92D550D1800D186B9 /* DetailViewUITests.swift in Sources */,
+				14B8A0792D552BEA00CBDFC6 /* EnvManager.swift in Sources */,
 				14FBA5882D548EEF00189406 /* EXSquaredTestAppUITests.swift in Sources */,
 				14FBA58A2D548EEF00189406 /* EXSquaredTestAppUITestsLaunchTests.swift in Sources */,
 			);
@@ -733,6 +741,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -764,6 +773,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

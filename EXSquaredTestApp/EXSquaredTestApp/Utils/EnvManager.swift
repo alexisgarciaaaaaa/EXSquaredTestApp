@@ -14,17 +14,9 @@ class EnvManager {
 
     func get(_ key: String, defaultValue: String? = nil) -> String? {
         if let value = Bundle.main.infoDictionary?[key] as? String {
-            return value.trimmingCharacters(in: CharacterSet(charactersIn: "\"")) // Remueve comillas extra
+            return value.trimmingCharacters(in: CharacterSet(charactersIn: "\""))
         }
         return defaultValue
-    }
-
-    var apiKey: String? {
-        return get("API_KEY")
-    }
-    
-    var baseURL: String? {
-        return get("BASE_URL")
     }
 }
 

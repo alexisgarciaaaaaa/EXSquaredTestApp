@@ -51,11 +51,60 @@ struct K {
         static let cfa = NSLocalizedString("cfa", comment: "Label for CFA link")
         static let vetstreet = NSLocalizedString("vetstreet", comment: "Label for Vetstreet link")
         static let vcaHospitals = NSLocalizedString("vca_hospitals", comment: "Label for VCA Hospitals link")
+        static let loadingText = NSLocalizedString("loading_text", comment: "Text displayed while loading")
+        static let noImageAvailable = NSLocalizedString("no_image_available", comment: "Text displayed when there is no image available")
     }
     
     struct API {
         static let baseURL = EnvManager.shared.get("BASE_URL") ?? "https://api.default.com"
         static let apiKey = EnvManager.shared.get("API_KEY") ?? "default-api-key"
         static let imageBaseURL = EnvManager.shared.get("IMAGE_BASE_URL") ?? "https://cdn2.thecatapi.com/images/"
+    }
+    
+    struct Test {
+        static let testingArgument = "--uitesting"
+        static let errorLoadingCats = "Failed to load cats"
+        static let loadingIndicator = "loadingIndicator"
+        static let catListView = "catListView"
+        static let firstCatItemError = "The first cat item should load within 5 seconds"
+        static let multipleItemsError = "The first cat item should exist"
+        static let secondItemError = "The second cat item should also be displayed"
+        static let newItemError = "Newly fetched items should appear after scrolling"
+        static let detailViewError = "Detail view should be displayed after tapping a cat"
+        static let firstItemNotFound = "The first cat item should exist"
+        static let detailViewNotDisplayed = "Detail view should be displayed after tapping a cat"
+        static let descriptionNotFound = "The cat description should be displayed"
+        static let originNotFound = "Origin should be displayed"
+        static let lifeSpanNotFound = "Life Span should be displayed"
+        static let temperamentNotFound = "Temperament should be displayed"
+        static let catImageNotFound = "The cat image should be displayed"
+        static let navigationVisibleTitle = "The navigation title should be visible"
+        static let catListTitle = "Cat Breeds"
+        static let detailViewTitle = "detailViewTitle"
+        static let detailViewDescription = "detailViewDescription"
+        static let detailViewOrigin = "Origin"
+        static let detailViewLifeSpan = "Life Span"
+        static let detailViewTemperament = "Temperament"
+        static let catImageView = "catImageView"
+        static let cacheRetrieveError = "The image should be retrieved from the cache"
+        static let cacheImageMismatch = "The retrieved image should be the same as the stored one"
+        static let invalidURLError = "Should return nil for an invalid URL"
+        static let testImageURL = "https://example.com/test-image.jpg"
+        static let invalidImageURL = "invalid-url"
+    }
+    
+    struct AccessibilityIdentifiers {
+        static let detailView = "detailView"
+        static let catImageView = "catImageView"
+        static let detailViewTitle = "detailViewTitle"
+        static let detailViewDescription = "detailViewDescription"
+        static let detailViewOrigin = "Origin"
+        static let detailViewLifeSpan = "Life Span"
+        static let detailViewTemperament = "Temperament"
+        
+        static let catListView = "catListView"
+        static let loadingIndicator = "loadingIndicator"
+        static let errorViewMessage = "errorViewMessage"
+        static let catNamePrefix = "catName_"
     }
 }

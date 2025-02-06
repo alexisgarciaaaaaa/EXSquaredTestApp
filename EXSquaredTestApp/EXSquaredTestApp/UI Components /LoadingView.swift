@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LoadingView: View {
     var body: some View {
-        ProgressView("Loading...")
+        ProgressView(K.Strings.loadingText)
             .frame(maxWidth: .infinity)
             .padding()
             .multilineTextAlignment(.center)
