@@ -28,7 +28,7 @@ open EXSquaredTestApp.xcworkspace
 Configure environment variables:
 
 ```bash
-Add your API_KEY, IMAGE_BASE_URL, and BASE_URL in Secrets.xcconfig.
+Add your API_KEY, IMAGE_BASE_URL, and BASE_URL in EXSquaredTestApp/EXSquaredTestApp/SecureAPIKeys/Secrets.xcconfig.
 ```
 Run the application on a simulator or physical device:
 
