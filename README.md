@@ -19,6 +19,9 @@ Clone the repository:
 git clone [https://github.com/your-repo/EXSquaredTestApp.git](https://github.com/alexisgarciaaaaaa/EXSquaredTestApp.git)
 cd EXSquaredTestApp
 ```
+Copy the `Info.plist.example` file and rename it to `Info.plist`:
+   ```bash
+   cp Info.plist.example Info.plist
 
 Open the project in Xcode:
 
