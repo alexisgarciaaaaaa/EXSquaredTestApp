@@ -11,7 +11,7 @@ import SwiftUI
 struct EXSquaredTestAppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CatListView()
         }
     }
 }
