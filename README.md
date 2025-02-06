@@ -64,25 +64,31 @@ Run UI tests:
 
 #### Clean Architecture
 
-The project follows Clean Architecture, ensuring clear separation of concerns:
+##### The project follows Clean Architecture, ensuring clear separation of concerns:
 
-UI Layer (Presentation): Handles UI using SwiftUI.
+- UI Layer (Presentation): Handles UI using SwiftUI.
 
-Domain Layer (Business Logic): Contains use cases and repository interfaces.
+- Domain Layer (Business Logic): Contains use cases and repository interfaces.
 
-Data Layer (Data Management):
+- Data Layer (Data Management):
 
-ServiceLayer/: Handles API calls.
+- ServiceLayer/: Handles API calls.
 
-Repository/: Defines abstraction for data access.
+- Repository/: Defines abstraction for data access.
 
 #### SOLID Principles
 
-✅ S - Single Responsibility Principle: Each class has a single responsibility.✅ O - Open/Closed Principle: Features can be extended without modifying existing code.✅ L - Liskov Substitution Principle: Components can be swapped without breaking functionality.✅ I - Interface Segregation Principle: Each protocol includes only necessary methods.✅ D - Dependency Inversion Principle: High-level modules depend on abstractions, not implementations.
+- S - Single Responsibility Principle: Each class has a single responsibility.
+- O - Open/Closed Principle: Features can be extended without modifying existing code.
+- L - Liskov Substitution Principle: Components can be swapped without breaking functionality.
+- I - Interface Segregation Principle: Each protocol includes only necessary methods.
+- D - Dependency Inversion Principle: High-level modules depend on abstractions, not implementations.
 
 #### Additional Patterns Used
 
-✅ Repository Pattern: Separates data access logic from business logic.✅ Dependency Injection: ViewModels receive dependencies to improve testability and modularity.✅ Singleton (Logger.swift, EnvManager.swift): Proper use of singletons for logging and configuration management.
+- Repository Pattern: Separates data access logic from business logic.
+- Dependency Injection: ViewModels receive dependencies to improve testability and modularity.
+- Singleton (Logger.swift, EnvManager.swift): Proper use of singletons for logging and configuration management.
 
 #### Contact
 
