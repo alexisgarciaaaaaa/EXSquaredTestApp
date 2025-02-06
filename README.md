@@ -15,8 +15,8 @@ Swift 5.0 or later
 
 Clone the repository:
 
-```bash
-git clone https://github.com/your-repo/EXSquaredTestApp.git
+```bash 
+git clone [https://github.com/your-repo/EXSquaredTestApp.git](https://github.com/alexisgarciaaaaaa/EXSquaredTestApp.git)
 cd EXSquaredTestApp
 ```
 
