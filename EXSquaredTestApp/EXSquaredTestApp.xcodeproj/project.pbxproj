@@ -38,6 +38,8 @@
 		14FBA5522D541EF200189406 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 14FBA5512D541EF200189406 /* Localizable.xcstrings */; };
 		14FBA5542D54203900189406 /* PaginationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FBA5532D54203900189406 /* PaginationHandler.swift */; };
 		14FBA55D2D54611600189406 /* EnvManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FBA55C2D54611600189406 /* EnvManager.swift */; };
+		14FBA55F2D54680100189406 /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FBA55E2D54680100189406 /* ImageCacheManager.swift */; };
+		14FBA5612D54682600189406 /* CachedAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FBA5602D54682600189406 /* CachedAsyncImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +77,8 @@
 		14FBA55A2D5458A100189406 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
 		14FBA55B2D54598C00189406 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		14FBA55C2D54611600189406 /* EnvManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvManager.swift; sourceTree = "<group>"; };
+		14FBA55E2D54680100189406 /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
+		14FBA5602D54682600189406 /* CachedAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedAsyncImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +168,7 @@
 				14FBA54F2D541BB100189406 /* K.swift */,
 				14FBA5512D541EF200189406 /* Localizable.xcstrings */,
 				14FBA55C2D54611600189406 /* EnvManager.swift */,
+				14FBA55E2D54680100189406 /* ImageCacheManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -174,6 +179,7 @@
 				14FBA5492D5410A300189406 /* ErrorView.swift */,
 				14FBA5472D54108C00189406 /* LoadingView.swift */,
 				14FBA53E2D540D0100189406 /* NoImageView.swift */,
+				14FBA5602D54682600189406 /* CachedAsyncImage.swift */,
 			);
 			path = "UI Components ";
 			sourceTree = "<group>";
@@ -371,6 +377,7 @@
 				14FBA5542D54203900189406 /* PaginationHandler.swift in Sources */,
 				14FBA5362D540BD900189406 /* CatDetailModel.swift in Sources */,
 				14FBA54C2D5414BB00189406 /* CatStatsView.swift in Sources */,
+				14FBA55F2D54680100189406 /* ImageCacheManager.swift in Sources */,
 				14FBA51A2D53DCA000189406 /* ListItemModel.swift in Sources */,
 				14FBA5462D54107200189406 /* CatListItemView.swift in Sources */,
 				14FBA4FE2D53D6CE00189406 /* EXSquaredTestAppApp.swift in Sources */,
@@ -379,6 +386,7 @@
 				14FBA54E2D5414C900189406 /* MoreInfoView.swift in Sources */,
 				14FBA51F2D53DF2500189406 /* APIEndpoint.swift in Sources */,
 				14FBA53F2D540D0100189406 /* NoImageView.swift in Sources */,
+				14FBA5612D54682600189406 /* CachedAsyncImage.swift in Sources */,
 				14FBA5482D54108C00189406 /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,17 +13,11 @@ struct ListItemView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
+            
             if let imageURL = cat.image?.url {
-                AsyncImage(url: URL(string: imageURL)) { image in
-                    image.resizable()
-                         .scaledToFill()
-                         .frame(width: K.UIConfig.cardWidth, height: K.UIConfig.cardHeight)
-                         .clipped()
-                } placeholder: {
-                    ProgressView()
-                        .frame(width: K.UIConfig.cardWidth, height: K.UIConfig.cardHeight)
-                }
-                .clipShape(RoundedRectangle(cornerRadius: K.UIConfig.cardCornerRadius))
+                CachedAsyncImage(url: imageURL)
+                    .frame(width: K.UIConfig.cardWidth, height: K.UIConfig.cardHeight)
+                    .clipShape(RoundedRectangle(cornerRadius: K.UIConfig.cardCornerRadius))
             } else {
                 NoImageView()
             }

@@ -40,8 +40,7 @@ enum CatAPI: APIEndpoint{
     var headers: [String : String]? {
         var headers: [String: String] = [
             "Content-Type": "application/json"
-        ]
-        
+        ]        
         headers["x-api-key"] = K.API.apiKey
         
         return headers
