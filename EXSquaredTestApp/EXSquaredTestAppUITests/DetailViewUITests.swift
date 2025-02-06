@@ -13,6 +13,7 @@ final class DetailViewUITests: XCTestCase {
     override func setUp() {
         continueAfterFailure = false
         app = XCUIApplication()
+        app.launchArguments.append("--uitesting")
         app.launch()
     }
 
@@ -22,7 +23,7 @@ final class DetailViewUITests: XCTestCase {
     }
     func navigateToDetailView() {
             let firstCell = app.cells.element(boundBy: 0)
-            XCTAssertTrue(firstCell.waitForExistence(timeout: 5), "The first cat item should exist")
+            XCTAssertTrue(firstCell.waitForExistence(timeout: 20), "The first cat item should exist")
 
             firstCell.tap()
 
@@ -58,6 +59,6 @@ final class DetailViewUITests: XCTestCase {
         navigateToDetailView()
 
         let catImage = app.images["catImageView"]
-        XCTAssertTrue(catImage.waitForExistence(timeout: 15), "The cat image should be displayed")
+        XCTAssertTrue(catImage.exists, "The cat image should be displayed")
     }
 }

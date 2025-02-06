@@ -32,7 +32,7 @@ class MockCatListService: UseCatListRepository {
                 lifeSpan: "12-15",
                 energyLevel: 4,
                 adaptability: 5,
-                image: CatImage(url: "https://example.com/siamese.jpg")
+                image: CatImage(url: "https://placehold.co/600x400?text=Hello+World")
             ),
             Cat(
                 id: "2",
@@ -42,7 +42,7 @@ class MockCatListService: UseCatListRepository {
                 lifeSpan: "12-15",
                 energyLevel: 4,
                 adaptability: 5,
-                image: CatImage(url: "https://example.com/siamese.jpg")
+                image: CatImage(url: "https://placehold.co/600x400?text=Hello+World")
             ),
             Cat(
                 id: "3",
@@ -52,7 +52,7 @@ class MockCatListService: UseCatListRepository {
                 lifeSpan: "12-15",
                 energyLevel: 4,
                 adaptability: 5,
-                image: CatImage(url: "https://example.com/siamese.jpg")
+                image: CatImage(url: "https://placehold.co/600x400?text=Hello+World")
             )
         ]
         return Just(mockCats)
@@ -63,7 +63,7 @@ class MockCatListService: UseCatListRepository {
     func fetchCatDetail(id: String) -> AnyPublisher<CatDetail, Error> {
         let mockDetail = CatDetail(id: "1",
                                    name: "Maine Coon",
-                                   cfaURL: "https://www.cfa.org/siamese",
+                                   cfaURL: "https://placehold.co/600x400?text=Hello+World",
                                    vetstreetURL: "https://www.vetstreet.com/cats/siamese",
                                    vcahospitalsURL: "https://vcahospitals.com/siamese",
                                    temperament: "Curious, Playful",

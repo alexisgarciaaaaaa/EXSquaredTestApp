@@ -11,7 +11,10 @@ struct CatListView: View {
     @StateObject private var viewModel: CatListViewModel
     
     init(viewModel: CatListViewModel = CatListViewModel(useCase: UseCatListService())) {
-        _viewModel = StateObject(wrappedValue: viewModel)
+        let isUITesting = ProcessInfo.processInfo.arguments.contains("--uitesting")
+                    let mockService = MockCatListService()
+                    let viewModelInject = CatListViewModel(useCase: isUITesting ? mockService : UseCatListService())
+        _viewModel = StateObject(wrappedValue: viewModelInject)
     }
     
     var body: some View {
