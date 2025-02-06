@@ -10,9 +10,12 @@ import SwiftUI
 class ImageCacheManager {
     static let shared = ImageCacheManager()
 
-    private var cache = NSCache<NSString, UIImage>()
+    var cache = NSCache<NSString, UIImage>()
+    private let session: URLSession  // ✅ Hacemos que use una sesión inyectada
 
-    private init() {}
+    init(session: URLSession = .shared) {
+        self.session = session
+    }
 
     func getImage(from urlString: String, completion: @escaping (UIImage?) -> Void) {
         let cacheKey = NSString(string: urlString)
@@ -27,7 +30,7 @@ class ImageCacheManager {
             return
         }
 
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+        let task = session.dataTask(with: url) { data, response, error in
             if let data = data, let image = UIImage(data: data) {
                 self.cache.setObject(image, forKey: cacheKey)
                 DispatchQueue.main.async {

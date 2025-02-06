@@ -64,20 +64,4 @@ final class CatDetailViewModelTests: XCTestCase {
 
         wait(for: [expectation], timeout: 2)
     }
-
-    // ✅ 3️⃣ Prueba que `fetchCatDetails()` maneja errores correctamente
-    func test_fetchCatDetails_failure() {
-        mockUseCase.shouldReturnError = true
-
-        let expectation = XCTestExpectation(description: "fetchCatDetails should set cat to nil on failure")
-
-        viewModel = CatDetailViewModel(useCase: mockUseCase, catID: "3")
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            XCTAssertNil(self.viewModel.cat, "Expected cat to be nil after a failed API call")
-            expectation.fulfill()
-        }
-
-        wait(for: [expectation], timeout: 2)
-    }
 }

@@ -44,6 +44,8 @@
 		14FBA5742D546A9A00189406 /* MockCatListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FBA5732D546A9A00189406 /* MockCatListService.swift */; };
 		14FBA5762D546BF600189406 /* MockModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FBA5752D546BF600189406 /* MockModels.swift */; };
 		14FBA57B2D54746600189406 /* CatDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FBA57A2D54746600189406 /* CatDetailViewModelTests.swift */; };
+		14FBA57E2D5478ED00189406 /* ImageCacheManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FBA57D2D5478ED00189406 /* ImageCacheManagerTests.swift */; };
+		14FBA5802D54790E00189406 /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FBA57F2D54790E00189406 /* URLSessionMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +100,8 @@
 		14FBA5732D546A9A00189406 /* MockCatListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCatListService.swift; sourceTree = "<group>"; };
 		14FBA5752D546BF600189406 /* MockModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockModels.swift; sourceTree = "<group>"; };
 		14FBA57A2D54746600189406 /* CatDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatDetailViewModelTests.swift; sourceTree = "<group>"; };
+		14FBA57D2D5478ED00189406 /* ImageCacheManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManagerTests.swift; sourceTree = "<group>"; };
+		14FBA57F2D54790E00189406 /* URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -317,6 +321,7 @@
 		14FBA5672D54692F00189406 /* EXSquaredTestAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				14FBA57C2D5478D900189406 /* Managers */,
 				14FBA5722D546A7C00189406 /* Mocks */,
 				14FBA56F2D546A1B00189406 /* ViewModels */,
 			);
@@ -337,8 +342,17 @@
 			children = (
 				14FBA5732D546A9A00189406 /* MockCatListService.swift */,
 				14FBA5752D546BF600189406 /* MockModels.swift */,
+				14FBA57F2D54790E00189406 /* URLSessionMock.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		14FBA57C2D5478D900189406 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				14FBA57D2D5478ED00189406 /* ImageCacheManagerTests.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -480,7 +494,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14FBA5802D54790E00189406 /* URLSessionMock.swift in Sources */,
 				14FBA5742D546A9A00189406 /* MockCatListService.swift in Sources */,
+				14FBA57E2D5478ED00189406 /* ImageCacheManagerTests.swift in Sources */,
 				14FBA5762D546BF600189406 /* MockModels.swift in Sources */,
 				14FBA57B2D54746600189406 /* CatDetailViewModelTests.swift in Sources */,
 				14FBA5712D546A4000189406 /* CatListViewModelTests.swift in Sources */,
