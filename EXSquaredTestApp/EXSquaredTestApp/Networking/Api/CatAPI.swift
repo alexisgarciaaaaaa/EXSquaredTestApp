@@ -14,7 +14,7 @@ enum CatAPI: APIEndpoint{
     
     var baseURL: URL {
         guard let url = URL(string: K.API.baseURL) else {
-            fatalError("⚠️ BASE_URL inválida en Info.plist")
+            fatalError("⚠️ BASE_URL Invalid on Info.plist")
         }
         return url
     }
